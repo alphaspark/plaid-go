@@ -1,16 +1,21 @@
-# plaid-go
+# Plaid Legacy API Client
 
-plaid-go is a Go client implementation of the [Plaid API](https://plaid.com/docs).
+Community-maintained Go client implementation of the [Plaid Legacy API](https://plaid.com/docs/legacy/api/). Pull requests welcome.
 
-Install via `go get github.com/alphaspark/plaid-go/plaid`.
+**Documentation:** [![GoDoc](https://godoc.org/github.com/alphaspark/plaid-go?status.svg)](https://godoc.org/github.com/alphaspark/plaid-go/plaid)
 
-**Documentation:** [![GoDoc](https://godoc.org/github.com/plaid/plaid-go?status.svg)](https://godoc.org/github.com/plaid/plaid-go/plaid)
 
-TODO:
-- Complete README
-- Complete testing
-- Add CI
+## Quick Start
 
+Install:
+```bash
+$ go get github.com/alphaspark/plaid-go/plaid
+```
+
+Import:
+```go
+import "github.com/alphaspark/plaid-go/plaid"
+```
 
 ## Examples
 
@@ -111,6 +116,14 @@ if err != nil {
     fmt.Println("category", category.ID, "is", strings.Join(category.Hierarchy, ", "))
 }
 ```
+
+
+## TODO
+- [ ] Complete README
+- [ ] Complete testing using sandbox credentials
+- [ ] Add Travis CI
+- [ ] Add support for [v2 of API](https://plaid.com/docs)
+
 
 [1]: https://plaid.com/docs/link
 [2]: https://plaid.com/docs/link/stripe
