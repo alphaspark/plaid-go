@@ -53,6 +53,7 @@ type Account struct {
 		WireRouting string `json:"wireRouting"`
 	} `json:"numbers"`
 	Type            string `json:"type"`
+	Subtype         string `json:"subtype"`
 	InstitutionType string `json:"institution_type"`
 }
 
