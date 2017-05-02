@@ -2,7 +2,7 @@
 
 plaid-go is a Go client implementation of the [Plaid API](https://plaid.com/docs).
 
-Install via `go get github.com/plaid/plaid-go`.
+Install via `go get github.com/alphaspark/plaid-go/plaid`.
 
 **Documentation:** [![GoDoc](https://godoc.org/github.com/plaid/plaid-go?status.svg)](https://godoc.org/github.com/plaid/plaid-go/plaid)
 
