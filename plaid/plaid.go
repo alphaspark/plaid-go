@@ -57,6 +57,31 @@ type Account struct {
 	InstitutionType string `json:"institution_type"`
 }
 
+type AccountInfo struct {
+	Names []string `json:"names"`
+
+	Emails       []AccountInfoData        `json:"user_emails"`
+	PhoneNumbers []AccountInfoData        `json:"phone_numbers"`
+	Addresses    []AccountInfoAddressData `json:"addresses"`
+
+	AccessToken string `json:"access_token"`
+}
+type AccountInfoData struct {
+	Data      string `json:"data"`
+	Type      string `json:"type"`
+	IsPrimary bool   `json:"primary"`
+}
+type AccountInfoAddressData struct {
+	Address   Address `json:"data"`
+	IsPrimary bool    `json:"primary"`
+}
+type Address struct {
+	Street string `json:"street"`
+	City   string `json:"city"`
+	State  string `json:"state"`
+	Zip    string `json:"zip"`
+}
+
 type Transaction struct {
 	ID        string `json:"_id"`
 	AccountID string `json:"_account"`
@@ -138,6 +163,7 @@ type PostResponse struct {
 	AccessToken      string        `json:"access_token"`
 	AccountId        string        `json:"account_id"`
 	Accounts         []Account     `json:"accounts"`
+	Info             AccountInfo   `json:"info"`
 	BankAccountToken string        `json:"stripe_bank_account_token"`
 	MFA              string        `json:"mfa"`
 	Transactions     []Transaction `json:"transactions"`
