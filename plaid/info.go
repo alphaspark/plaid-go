@@ -12,7 +12,7 @@ import (
 // See https://plaid.com/docs/legacy/api/#get-info-data
 func (c *Client) InfoGet(accessToken string) (postRes *PostResponse, mfaRes *MFAResponse, err error) {
 
-	jsonText, err := json.Marshal(infoGetJson{
+	jsonText, err := json.Marshal(InfoGetJson{
 		ClientID:    c.clientID,
 		Secret:      c.secret,
 		AccessToken: accessToken,
@@ -23,7 +23,7 @@ func (c *Client) InfoGet(accessToken string) (postRes *PostResponse, mfaRes *MFA
 	return c.postAndUnmarshal("/info/get", bytes.NewReader(jsonText))
 }
 
-type infoGetJson struct {
+type InfoGetJson struct {
 	ClientID    string `json:"client_id"`
 	Secret      string `json:"secret"`
 	AccessToken string `json:"access_token"`
