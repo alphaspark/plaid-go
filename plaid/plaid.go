@@ -193,7 +193,7 @@ func getAndUnmarshal(environment, endpoint string, structure interface{}) error 
 		return nil
 	}
 	// Attempt to unmarshal into Plaid error format
-	var plaidErr plaidError
+	var plaidErr PlaidError
 	if err = json.Unmarshal(raw, &plaidErr); err != nil {
 		return err
 	}
@@ -273,7 +273,7 @@ func (c *Client) deleteAndUnmarshal(endpoint string,
 		return &deleteRes, nil
 	}
 	// Attempt to unmarshal into Plaid error format
-	var plaidErr plaidError
+	var plaidErr PlaidError
 	if err = json.Unmarshal(raw, &plaidErr); err != nil {
 		return nil, err
 	}
@@ -387,7 +387,7 @@ func unmarshalPostMFA(res *http.Response, body []byte) (*PostResponse, *MFARespo
 
 	// Error case, attempt to unmarshal into Plaid error format
 	case res.StatusCode >= 400:
-		var plaidErr plaidError
+		var plaidErr PlaidError
 		if err = json.Unmarshal(body, &plaidErr); err != nil {
 			return nil, nil, err
 		}

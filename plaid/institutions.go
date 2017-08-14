@@ -93,7 +93,7 @@ func (c *Client) GetInstitutions(environment string, products []string, count in
 		return institutionsJsonResp.Results, nil
 	case res.StatusCode >= 400:
 		// Attempt to unmarshal into Plaid error format
-		var plaidErr plaidError
+		var plaidErr PlaidError
 		if err = json.Unmarshal(raw, &plaidErr); err != nil {
 			return nil, err
 		}
